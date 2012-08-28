@@ -1,0 +1,91 @@
+@charset "utf-8";
+
+/* Reset */
+html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, a, article, aside, figure, footer, header, hgroup, menu, nav, section, time, mark, audio, video {margin:0; padding:0; border:0; outline:0; font-size:100%; vertical-align:baseline; background:transparent;outline:0;}									
+article, aside, figure, footer, header, hgroup, nav, section {display:block;}
+img, object, embed {max-width:100%;}
+ul {list-style:none;}
+blockquote, q {quotes:none;}
+blockquote:before, blockquote:after, q:before, q:after {content:''; content:none;}
+del {text-decoration:line-through;}
+abbr[title], dfn[title] {border-bottom:1px dotted #000; cursor:help;}
+table {border-collapse:collapse; border-spacing:0; font-size:inherit; font:100%;}
+th {font-weight:bold; vertical-align:bottom;}
+td {font-weight:normal; vertical-align:middle;}
+hr {display:block; height:1px; border:0; border-top:1px solid #CCC; margin:10px 0; padding:0;}
+input, select {vertical-align:middle;}
+pre {white-space:pre; white-space:pre-wrap; white-space:pre-line; word-wrap:break-word;}
+input[type="radio"] {vertical-align:text-bottom;}
+input[type="checkbox"] {vertical-align:bottom; *vertical-align:baseline;}
+input:focus,textarea:focus{outline: none}
+a:hover, a:active {outline:none;}
+small {font-size:85%;}
+strong, th {font-weight:bold;}
+td, td img {vertical-align:top;}
+sub, sup {font-size:75%; line-height:0; position:relative;}
+sup {top:-0.5em;}
+sub {bottom:-0.25em;}
+pre, code, kbd, samp {font-family: monospace, sans-serif;}
+.clickable, label, input[type=button], input[type=submit], button {cursor:pointer;}
+body, select, input, textarea {color:#808080;}
+button, input, select, textarea {margin:0; resize:none;}
+button {width:auto; overflow:visible;} 
+.ie7 img {-ms-interpolation-mode:bicubic;}
+.ie6 html {filter:expression(document.execCommand("BackgroundImageCache", false, true));}
+ins {background:#FCD700; color:#000; text-decoration:none;}
+mark {background:#FCD700; color:#000; font-style:italic; font-weight:bold;}
+::-moz-selection{background:#36609c; color:#FFF; text-shadow:none;}
+::selection {background:#36609c; color:#FFF; text-shadow:none;}
+
+/* Toolbox */
+.left {float:left;}
+.right {float:right;}
+.hide {display:none !important;}
+.clear {clear:both;}
+.screen-reader {position:absolute; top:-99999px; visibility:hidden;}
+
+/* Page style */
+body{font:12px Arial, sans-serif;background:url(../img/layout/bg.jpg) repeat;}
+a{text-decoration:none;}
+a:hover{}
+
+/* Content */
+#content{width:auto;min-height:612px}
+#content #main {width:350px;min-height:612px;margin:0 auto;}
+#content.page-sign #main.intern {width:660px;}
+#content.page-sign #main.intern h1 {width:652px;height:155px;margin:35px 0 0 10px;background:url(../img/layout/logo-python-pe.png) no-repeat;float:left;text-indent:-999em}
+#content.page-sign #main.intern h1 a {width:652px;height:155px;float:left}
+#content.page-sign #main.intern h3 {width:600px;height:35px;margin:10px 0 0 10px;background:url(../img/layout/img-ficha-inscricao.png) no-repeat;float:left;text-indent:-999em}
+#content.page-sign #main.intern p {margin:10px 0 10px 10px;padding:10px 0 0;border-top:1px solid #393939;color:#000;font:12px 'Arial', sans-serif;float:left}
+#content.page-sign #main.intern p strong {font:700 13px 'Arial',sans-serif;text-transform:uppercase;}
+#content.page-sign #main.intern form.sign-in {width:640px;height:auto;font:12px 'Arial',sans-serif;float:left;}
+#content.page-sign #main.intern form.sign-in .min {width:152px!important;height:35px;margin:10px 0 0 10px;padding:0 0 0 10px;color:#FFF;background:#393939;float:left;border:none;}
+#content.page-sign #main.intern form.sign-in .med {width:295px!important;height:35px;margin:10px 0 0 10px;padding:0 0 0 10px;color:#FFF;background:#393939;float:left;border:none;}
+#content.page-sign #main.intern form.sign-in .max {width:610px!important;height:35px;margin:10px 0 0 10px;padding:0 0 0 10px;color:#FFF;background:#393939;float:left;border:none;}
+#content.page-sign #main.intern .sign-in .btn-send {width:102px;height:47px;top:17px;left:-6px;background:url(../img/layout/img-btn-enviar-interna.png) no-repeat;float:right;text-indent:-999em;position:relative;border:none;cursor:pointer;z-index:999}
+#content.page-sign #main.intern .sign-in .rowElem{width:305px;height:35px;margin:10px 0 0 10px;float:left;}
+#content.page-sign #main.intern .sign-in .jqTransformInputWrapper {width:305px;margin:0 10px 0 0;float:left;}
+#content.page-sign #main.intern .sign-in .jqTransformSelectWrapper {width:305px!important;position:relative;height:35px;background:#393939;float:left;}
+#content.page-sign #main.intern .sign-in .jqTransformSelectWrapper div span {width:263px!important;height:25px;padding:10px 0 0 10px;font:12px 'arial',sans-serif;color:#FFF;position: absolute;overflow:hidden;cursor:pointer;float:none;}
+#content.page-sign #main.intern .sign-in .jqTransformSelectWrapper  a.jqTransformSelectOpen {width:35px;height:35px;right:0;background: url(../img/layout/btn-arrow.jpg) no-repeat center center;display: block;position:absolute;}
+#content.page-sign #main.intern .sign-in .jqTransformSelectWrapper ul {width:305px!important;height:122px!important;top:33px;left: 0px;list-style: none;background-color: #484848;overflow: auto;overflow-y: auto;z-index:10;position: absolute;display: none}
+#content.page-sign #main.intern .sign-in .rowElem .jqTransformSelectWrapper ul li:first-child {border-top:none}
+#content.page-sign #main.intern .sign-in .rowElem .jqTransformSelectWrapper ul li{width:305px!important;height:40px;border-top:1px solid #999999;}
+#content.page-sign #main.intern .sign-in .jqTransformSelectWrapper ul a {display: block;padding:13px;text-decoration: none;color:#FFF;font:12px 'arial',sans-serif;}
+#content.page-sign #main.intern .sign-in .jqTransformSelectWrapper ul a.selected {background: #575656;color: #FFF;font:700 12px 'arial',sans-serif;}
+#content.page-sign #main.intern .sign-in .jqTransformSelectWrapper ul a:hover, .jqTransformSelectWrapper ul a.selected:hover {background:#575656;color:#FFF;}
+#content.page-sign #main.intern .sign-in table.jqTransformTextarea tbody tr td#jqTransformTextarea-mm div textarea.jqtransformdone {width:614px;height:194px;margin:10px 0 0 8px;padding:5px 0 0 5px;color:#FFF;font:12px 'Arial', sans-serif;background:#393939;border:none}
+#content.page-sign #main.intern .sign-in .jqTransformHidden {display: none;}
+#content.page-sign footer {width:620px;height:65px;margin:0 0 0 -315px;left:50%;top:80px;clear:both;position:relative;}
+#content.page-sign footer .developer {width:104px;height:12px;margin:-15px 0 30px 0;background:url(../img/layout/studio-mustache.png) no-repeat;float:right;text-indent:-999em }
+/*Mensagem de Erro - Formulário não Enviado*/
+#content #error-form {width:100%;height:100%;background:url(../img/layout/bg-black.png) repeat;position:fixed;z-index:99999999}
+#content #error-form .error {width:450px;min-height:140px;margin:0 auto;top:210px;position:relative;}
+#content #error-form .error h3 {width:450px;height:71px;background:url(../img/layout/img-error-preenchimento.png) no-repeat;float:left;text-indent:-999em}
+#content #error-form .error .btn-ok {width:86px;height:35px;margin:20px 0 0;background:url(../img/layout/img-btn-ok.png) no-repeat;float:left;text-indent:-999em}
+
+/*Mensagem de Sucesso - Formulário Enviado*/
+#content #sucess-form {width:100%;height:100%;background:url(../img/layout/bg-black.png) repeat;position:fixed;z-index:99999999}
+#content #sucess-form .sucess {width:450px;min-height:140px;margin:0 auto;top:210px;position:relative;}
+#content #sucess-form .sucess h3 {width:450px;height:71px;background:url(../img/layout/img-sucesso.png) no-repeat;float:left;text-indent:-999em}
+#content #sucess-form .sucess .btn-ok {width:86px;height:35px;margin:20px 0 0;background:url(../img/layout/img-btn-ok.png) no-repeat;float:left;text-indent:-999em}

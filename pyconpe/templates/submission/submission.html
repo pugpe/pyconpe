@@ -1,0 +1,85 @@
+{% load form_tag %}
+<!DOCTYPE html>
+<!--[if gt IE 8]> <!--> <html class="no-js" lang="pt-br" xmlns:og="http://ogp.me/ns#" xmlns:og="http://ogp.me/fb#"> <!--<![endif]-->
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Cadastro de Palestras</title>
+	<meta name="author" content="humans.txt"> 
+	<meta name="description" content=" ">
+	<meta name="keywords" content=" ">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- meta tags default -->
+	<meta property="og:title" content=" ">
+	<meta property="og:type" content=" ">
+	<meta property="og:url" content=" ">
+	<meta property="og:image" content=" ">
+	<meta property="og:site_name" content=" ">
+	<meta property="og:description" content=" ">
+	<!-- meta tags Open Graph protocol -->
+	<link rel="shortcut icon" href="{{ STATIC_URL }}img/favicon.ico">
+	<link rel="icon" href="{{ STATIC_URL }}img/favicon.ico">
+	<link rel="apple-touch-icon" href=" ">
+	<!-- favicon -->
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/style.css">
+	<!-- style -->
+    <script src="{{ STATIC_URL }}js/modernizr.js"></script>
+	<script src="{{ STATIC_URL }}js/jquery.js"></script>
+	<script src="{{ STATIC_URL }}js/jqtransform.js"></script>
+
+	<!-- script -->
+</head>
+<body>
+	<nav class="screen-reader">
+		<a href="#content" accesskey="c">Alt + Shift + C ir para o conteúdo</a>
+	</nav><!-- .screen-reader -->
+	
+		<section id="content" class="page-sign">
+            {% if form.errors %}
+                <section id="error-form">
+                    <div class="error">
+                        <h3>Erro</h3>
+                        <p>Por Favor, Verifique o preenchimento dos campos.</p>
+                        <p>{{ form.errors }}</p>
+                        <a class="btn-ok" href="#" title="Ok">ok</a>
+                    </div>
+                </section>
+            {% endif %}
+			
+            {% if messages %}
+                <section id="sucess-form">
+                    <div class="sucess">
+                        <h3>Formulário Enviado</h3>
+                        {% for message in messages %}
+                            <h2{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</h2>
+                        {% endfor %}
+                        <a class="btn-ok" href="#" title="Ok">ok</a>
+                    </div>
+                </section> 
+            {% endif %}
+			<section id="main" class="intern">
+				<h1><a href="http://pug-pe.python.org.br/encontro/xix/" title="Pycon PE" rel="external">Pycon PE - Python User 	Group Pernambuco</a></h1>
+				<p>Este formulário visa a convidar a todos a submeterem palestras para o nosso XX Encontro do Grupo de Usuários de Python de Pernambuco (PUG-PE).  O evento será realizado dia 1 de setembro na Escola Politécnica de Pernambuco (POLI-UPE-Recife-PE).  Serão selecionadas 8 palestras ao total mediante votação dos membros da lista de discussão.
+				Qualquer um pode submeter quantas quiser.<br>
+				As palestras terão duração no máximo de 40 minutos.<br>
+				<strong>PRAZO de Submissão: 26 de agosto de 2012 (23:59:59 Horário de Brasília).</strong><br>
+				Submetam!<br>
+				Atenciosamente,<br>
+				Equipe PUG-PE</p>
+				<h3>Ficha de Inscrição</h3>
+				<form method="POST" action="." class="sign-in">
+                    {% csrf_token %} 
+                    {{ form|pug_form }}
+					<input class="btn-send" type="submit" value="Enviar">
+				</form>
+			</section>
+			<footer>
+				<figure><a href="http://pug-pe.python.org.br/encontro/xix/" title="Pycon PE" rel="external"><img src="{{ STATIC_URL }}img/layout/logo-python-pe.png" alt="Python PE" width="200" height="auto"></a></figure>
+				<a class="developer" href="http://www.studiomustache.com.br" rel="external" title="Studio Mustache">Studio Mustache</a>
+			</footer>	
+		</section><!-- #content -->
+		
+    <script src="{{ STATIC_URL }}js/functions.js"></script>
+	<!-- script -->
+</body>
+</html>

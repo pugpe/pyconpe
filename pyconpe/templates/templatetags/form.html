@@ -1,0 +1,25 @@
+{% load cssclass %}
+
+{% for bfield in form %}
+    {{ bfield.label_tag }} 
+    {% if bfield.field.widget.input_type == 'text' %}
+        {{ bfield|fieldclass:"med clear-text" }}
+    {% else %}
+        {% if bfield.field.choices %}
+            <div class="rowElem">
+                {{ bfield }}
+            </div>
+        {% else %}
+            {{ bfield }}
+        {% endif %}
+    {% endif %}
+
+    {% comment %}
+    {% if bfield.errors %}
+    <span class="error">
+        {{ bfield.errors.as_text }}
+    </span>
+    {% endif %}
+    {% endcomment %}
+
+{% endfor %}
