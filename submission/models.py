@@ -16,8 +16,8 @@ class Talk(models.Model):
     )
 
     BOOL = (
-        (0, _(u'Não')),
-        (1, _(u'Sim')),
+        (False, _(u'Não')),
+        (True, _(u'Sim')),
     )
 
     THEMES = (
@@ -42,9 +42,7 @@ class Talk(models.Model):
         _(u'MacroTema'), max_length=80, choices=THEMES,
     )
     title = models.CharField(_(u'Título'), max_length=80)
-    type = models.CharField(
-        _(u'Tipo'), max_length=20, choices=TYPES, blank=True,
-    )
+    type = models.CharField(_(u'Tipo'), max_length=20, choices=TYPES)
     level = models.CharField(_(u'Nível'), max_length=20, choices=LEVELS)
     summary = models.TextField(_(u'Resumo'))
     pub_date = models.DateTimeField(auto_now_add=True)
