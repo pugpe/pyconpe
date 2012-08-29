@@ -47,6 +47,7 @@ class Talk(models.Model):
     )
     level = models.CharField(_(u'Nível'), max_length=20, choices=LEVELS)
     summary = models.TextField(_(u'Resumo'))
+    pub_date = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         verbose_name = _(u'Palestra')
