@@ -37,7 +37,7 @@ class Talk(models.Model):
     name = models.CharField(_(u'Nome'), max_length=150)
     email = models.EmailField(_(u'E-Mail'), max_length=254)
     phone = models.CharField(_(u'Telefone'), max_length=14)
-    talk_once = models.BooleanField(_(u'Já paletrou'), choices=BOOL)
+    talk_once = models.BooleanField(_(u'Já palestrou'), choices=BOOL)
     macro_theme = models.CharField(
         _(u'MacroTema'), max_length=80, choices=THEMES,
     )

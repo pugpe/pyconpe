@@ -26,9 +26,12 @@ class TalkForm(forms.ModelForm):
         self.fields['type'].widget.choices = (('' , u'Tipo'),) + Talk.TYPES
 
         types = (('' , u'Já Palestrou em algum encontro PUG-PE'),) + Talk.BOOL
+        self.fields['talk_once'].initial = u''
         self.fields['talk_once'].widget.choices = types
+        self.fields['talk_once'].required = True
 
         themes = (('', _(u'Qual é o macro-tema da sua palestra ?')),)
         self.fields['macro_theme'].widget.choices = themes + Talk.THEMES
 
-        self.fields['summary'].initial = _(u'Digite o resumo da sua palestra ou tutorial')
+        self.fields['summary'].initial = _(u'Digite o resumo da sua palestra '
+                                           u'ou tutorial')
