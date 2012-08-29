@@ -18,7 +18,6 @@ class TalkForm(forms.ModelForm):
         self.fields['name'].initial = _(u'Digite seu nome')
         self.fields['email'].initial = _(u'Digite seu E-mail')
         self.fields['phone'].initial = _(u'Telefone para contato')
-        self.fields['macro_theme'].initial = _(u'MacroTema')
         self.fields['title'].initial = _(u'Título')
 
         levels = (('', u'Nível de Palestra'),) + Talk.LEVELS
@@ -28,5 +27,8 @@ class TalkForm(forms.ModelForm):
 
         types = (('' , u'Já Palestrou em algum encontro PUG-PE'),) + Talk.BOOL
         self.fields['talk_once'].widget.choices = types
+
+        themes = (('', _(u'Qual é o macro-tema da sua palestra ?')),)
+        self.fields['macro_theme'].widget.choices = themes + Talk.THEMES
 
         self.fields['summary'].initial = _(u'Digite o resumo da sua palestra ou tutorial')
