@@ -1,5 +1,4 @@
-{% load form_tag %}
-<!DOCTYPE html>
+{% load form_tag %}{% load verbose_name %}<!DOCTYPE html>
 <!--[if gt IE 8]> <!--> <html class="no-js" lang="pt-br" xmlns:og="http://ogp.me/ns#" xmlns:og="http://ogp.me/fb#"> <!--<![endif]-->
 <head>
 	<meta charset="UTF-8">
@@ -40,7 +39,9 @@
                     <div class="error">
                         <h3>Erro</h3>
                         <p>Por Favor, Verifique o preenchimento dos campos.</p>
-                        <p>{{ form.errors }}</p>
+                        {% for field, errors in form.errors.items %}
+                            <p style="margin-top: 10px">{{ field|verbose_name:form }}: {{ errors }}</p>
+                        {% endfor %}
                         <a class="btn-ok" href="#" title="Ok">ok</a>
                     </div>
                 </section>
