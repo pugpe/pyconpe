@@ -144,6 +144,10 @@ servers = {
             MainServer
         ],
         'options': {
+            # Smtp
+            'smtp_user': 'AKIAICFVIQFBN77PTE7Q' ,
+            'smtp_password' '':
+                AskFor('smtp', 'Please enter smtp password'),
             # supervisord
             'include_dir': '/etc/supervisor/conf.d/',
             'include': '/etc/supervisor/conf.d/*.conf',

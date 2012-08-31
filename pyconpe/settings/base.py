@@ -6,8 +6,9 @@ PROJECT_ROOT = abspath(join(dirname(__file__), '../'))
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
+SERVER_EMAIL = 'fernandogrd@yahoo.com.br'
 ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
+    ('Fernando', 'fernandogrd@yahoo.com.br'),
 )
 
 MANAGERS = ADMINS
