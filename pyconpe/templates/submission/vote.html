@@ -1,0 +1,79 @@
+{% extends "submission/base.html" %}
+{% load i18n %}
+
+{% block extrastyle %}
+<style>
+    td {
+        padding: 10px;
+    }
+    .palestra {
+        font-size: 23px;
+        color: white;
+        margin-left: 7px;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+
+    <div style="color:black">
+        <div class="">
+            <span style="">
+                <b class="palestra" >Palestra</b> {{ page_obj.number }}/{{ page_obj.paginator.num_pages }}.
+            </span>
+        </div>
+
+        <table>
+        {% for talk in talks %}
+            <tr>
+                <td><b>{% trans "Título" %}</b></td>
+                <td>{{ talk.title }}</td>
+            </tr>
+            <tr>
+                <td><b>{% trans "Resumo" %}</b></td>
+                <td>{{ talk.summary }}</td>
+            </tr>
+            <tr>
+                <td><b>{% trans "Palestrante" %}</b></td>
+                <td>{{ talk.name }}</td>
+            </tr>
+            <tr>
+                <td><b>{% trans "Macro&nbspTema" %}</b></td>
+                <td>{{ talk.get_macro_theme }}</td>
+            </tr>
+            <tr>
+                <td><b>{% trans "Tipo" %}</b></td>
+                <td>{{ talk.get_type }}</td>
+            </tr>
+            <tr>
+                <td><b>{% trans "Nível" %}</b></td>
+                <td>{{ talk.get_level }}</td>
+            </tr>
+            <tr>
+                <td>
+                    <form method="POST" action=".">
+                        {% csrf_token %}
+                        {{ talk.like_form }}
+                        {% if page_obj.has_next %}
+                            <input type="hidden" name="page" value="{{ page_obj.next_page_number }}">
+                        {% endif %}
+                        <input type="submit" value="{% trans 'Gostei' %}">
+                    </form>
+                </td>
+                <td>
+                    <form method="POST" action=".">
+                        {% csrf_token %}
+                        {% if page_obj.has_next %}
+                            <input type="hidden" name="page" value="{{ page_obj.next_page_number }}">
+                        {% endif %}
+                        {{ talk.dislike_form }}
+                        <input type="submit" value="{% trans 'Não Gostei' %}">
+                    </form>
+                </td>
+            </tr>
+        {% empty %}
+            <tr>{% trans "Nenhuma palestra cadastrada" %}</tr>
+        {% endfor %}
+        </table>
+    </div>
+{% endblock %}

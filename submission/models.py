@@ -2,8 +2,25 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
+from core.models import TimeStampedModel
 
-class Talk(models.Model):
+
+
+class Vote(TimeStampedModel):
+    TYPES = (
+        (u'like', _(u'Gostei')),
+        (u'dislike', _(u'Não gostei')),
+    )
+
+    email = models.ForeignKey('emails.Email')
+    talk = models.ForeignKey('submission.Talk')
+    type = models.CharField(max_length=15, choices=TYPES)
+
+    def __unicode__(self):
+        return u'{0}; {1}; {2}'.format(self.email, self.talk.id, self.type)
+
+
+class Talk(TimeStampedModel):
     TYPES = (
         ('talk', _(u'Palestra')),
         ('tutorial', _(u'Tutorial')),
@@ -45,7 +62,6 @@ class Talk(models.Model):
     type = models.CharField(_(u'Tipo'), max_length=20, choices=TYPES)
     level = models.CharField(_(u'Nível'), max_length=20, choices=LEVELS)
     summary = models.TextField(_(u'Resumo'))
-    pub_date = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         verbose_name = _(u'Palestra')
@@ -53,3 +69,22 @@ class Talk(models.Model):
 
     def __unicode__(self):
         return u'{0} | {1}'.format(self.name, self.title)
+
+    def get_type(self):
+        return dict(self.TYPES)[self.type]
+
+    def get_level(self):
+        return dict(self.LEVELS)[self.level]
+
+    def get_macro_theme(self):
+        return dict(self.THEMES)[self.macro_theme]
+
+    def _form(self, type):
+        from .forms import VoteForm
+        return VoteForm(initial={'talk': self.pk, 'type': type})
+
+    def like_form(self):
+        return self._form('like')
+
+    def dislike_form(self):
+        return self._form('dislike')

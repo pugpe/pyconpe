@@ -122,6 +122,7 @@ INSTALLED_APPS = (
 
     'core',
     'submission',
+    'emails',
 )
 
 # A sample logging configuration. The only tangible logging
