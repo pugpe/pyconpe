@@ -10,6 +10,7 @@ test: deps clean
 setup: deps
 	@python manage.py syncdb
 	@python manage.py migrate
+	@python manage.py loaddata core/fixtures/site_fixture.json
 
 run:
 	@python manage.py runserver 0.0.0.0:8000

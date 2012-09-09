@@ -83,6 +83,12 @@ def migrate():
             run('python manage.py migrate')
 
 
+def load_fixtures():
+    with prefix('source {0}bin/activate'.format(env.opts['virtualenv'])):
+        with cd(env.opts['project_path']):
+            run('python manage.py loaddata core/fixtures/site_fixture.json')
+
+
 def translate():
     with prefix('source {0}bin/activate'.format(env.opts['virtualenv'])):
         with cd(env.opts['project_path']):
@@ -105,4 +111,5 @@ def deploy():
     collect_static()
     #run_tests()
     migrate()
+    load_fixtures()
     restart_supervisord()
