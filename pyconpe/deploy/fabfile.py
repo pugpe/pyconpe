@@ -50,10 +50,12 @@ def update_supervisord():
 
 
 def rsync():
+    with open('../../.gitignore') as f:
+        exclude = f.read().splitlines()[1:]
+
     rsync_project(
         '/srv', os.path.abspath('../../'), delete=True,
-         exclude=['*.pyc', '*.sqlite', 'uploads', '*.swp', 'prod.py', '*.dat',
-                  '*.dat.gz'],
+         exclude=exclude,
     )
 
 

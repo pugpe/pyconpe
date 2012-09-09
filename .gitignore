@@ -6,3 +6,6 @@
 *.swp
 media/*
 build/*
+local.py
+prod.py
+secret.py
