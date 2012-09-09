@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import os
 from os.path import abspath, dirname, join
 
@@ -6,7 +7,7 @@ PROJECT_ROOT = abspath(join(dirname(__file__), '../'))
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
-DEFAULT_FROM_EMAIL = 'organizacao@pug.pe'
+DEFAULT_FROM_EMAIL = u'PyconPE <organizacao@pug.pe>'
 SERVER_EMAIL = DEFAULT_FROM_EMAIL
 ADMINS = (
     ('Fernando', 'fernandogrd@yahoo.com.br'),
