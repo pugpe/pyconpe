@@ -24,6 +24,7 @@ class Talk(TimeStampedModel):
     TYPES = (
         ('talk', _(u'Palestra')),
         ('tutorial', _(u'Tutorial')),
+        ('light', _(u'Palestra Relâmpago')),
     )
 
     LEVELS = (

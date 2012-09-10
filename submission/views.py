@@ -34,6 +34,9 @@ class SubmissionListView(ListView):
     def dispatch(self, *args, **kwargs):
         return super(SubmissionListView, self).dispatch(*args, **kwargs)
 
+    def get_queryset(self):
+        return Talk.objects.filter(type__in=['talk', 'tutorial'])
+
     def post(self, request):
 
         form = VoteForm(request.POST)

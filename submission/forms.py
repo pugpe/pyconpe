@@ -22,7 +22,7 @@ class TalkForm(forms.ModelForm):
         levels = (('', u'Nível de Palestra'),) + Talk.LEVELS
         self.fields['level'].widget.choices = levels
 
-        self.fields['type'].widget.choices = (('' , u'Tipo'),) + Talk.TYPES
+        self.fields['type'].widget.choices = (('' , u'Tipo'),) + Talk.TYPES[2:]
 
         types = (('' , u'Já Palestrou em algum encontro PUG-PE'),) + Talk.BOOL
         self.fields['talk_once'].initial = u''
