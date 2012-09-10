@@ -6,8 +6,7 @@ from .views import SubmissionView, SubmissionListView
 
 urlpatterns = patterns('',
     url(r'^$',
-        #SubmissionView.as_view(),
-        direct_to_template, {'template': 'submission/end.html'},
+        SubmissionView.as_view(),
         name='submission',
     ),
     url(r'^votar/$',
