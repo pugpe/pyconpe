@@ -1,0 +1,13 @@
+{% extends "submission/base.html" %}
+{% load form_tag %}
+{% load verbose_name %}
+
+{% block content %}
+    <h2> Resultado da votação </h2>
+    {% for talk in talks %}
+    <h2>{{talk.name}}</h2>
+    Likes: {{talk.likes}} | Dislikes: {{talk.dislikes}}
+    <br />
+    {% endfor %}
+
+{% endblock %}
