@@ -1,12 +1,13 @@
 from django.conf.urls import patterns, include, url
+from django.views.generic.simple import direct_to_template
 
 from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
    url(r'^$',
-       'django.views.generic.simple.redirect_to',
-       {'url': 'http://pug-pe.python.org.br/encontro/xx/', 'permanent': False},
+       direct_to_template, {'template': 'index.html'},
+       name='index',
     ),
     url(r'^submissao/', include('submission.urls', namespace='submission')),
     url(r'^emails/', include('emails.urls', namespace='emails')),

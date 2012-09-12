@@ -1,0 +1,148 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>XX Encontro do PUG-PE</title>
+        <link href="{{ STATIC_URL }}bootstrap/css/bootstrap.css" rel="stylesheet" >
+        <!-- meta tags Open Graph protocol -->
+        <link rel="shortcut icon" href="{{ STATIC_URL }}{{ STATIC_URL }}imagens/favicon.ico">
+        <link rel="icon" href="{{ STATIC_URL }}imagens/favicon.ico">
+        <link rel="apple-touch-icon" href=" ">
+        <!-- favicon -->
+    </head>
+    <body>
+
+        <div align="center" id="logo">
+            <img src="{{ STATIC_URL }}imagens/logo.png" class="img-rounded center">
+        </div>
+        <div align="center" id="como-chegar">
+            <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=-8.058444,-34.903503&amp;num=1&amp;t=h&amp;ie=UTF8&amp;ll=-8.05838,-34.903629&amp;spn=0.011303,0.021136&amp;z=14&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?q=-8.058444,-34.903503&amp;num=1&amp;t=h&amp;ie=UTF8&amp;ll=-8.05838,-34.903629&amp;spn=0.011303,0.021136&amp;z=14&amp;source=embed" style="color:#0000FF;text-align:left">Exibir mapa ampliado</a></small>
+        </div>
+        <div id="grade">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Horário</th>
+                        <th>Conteúdo</th>
+                        <th>Palestrantes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>08:00 - 09:00</td>
+                        <td>Abertura e Inscrições</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>09:00 - 09:30</td>
+                        <td>Apresentação sobre o PUG-PE</td>
+                        <td>Fernando Rocha, Gileno Alves e Renato Oliveira</td>
+                    </tr>
+                    <tr>
+                        <td>09:30 - 10:20</td>
+                        <td>Automatização com Python de Listas de Pontos para Subestações do Setor Elétrico</td>
+                        <td>Hugo Everaldo Salvador Bezerra</td>
+                    </tr>
+                    <tr>
+                        <td>10:30 - 11:00</td>
+                        <td>O estado da arte do deploy em python</td>
+                        <td>Fernando Rocha </td>
+                    </tr>
+                    <tr>
+                        <td>11:10 - 11:40</td>
+                        <td>Células Empreendedoras</td>
+                        <td>Genésio</td>
+                    </tr>
+                    <tr>
+                        <td>11:50 - 12:20</td>
+                        <td>Lighting Talks Round 1</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>12:30 - 14:00</td>
+                        <td>Almoço</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>14:00 - 14:50</td>
+                        <td>Projeto Amadeus - Sistema de Gestão da Aprendizagem</td>
+                        <td>Celo Melo e Paulo Perris </td>
+                    </tr>
+                    <tr>
+                        <td>15:00 - 15:30</td>
+                        <td>E dá para desenvolver web games com Django?</td>
+                        <td>Guilherme Medeiros</td>
+                    </tr>
+                    <tr>
+                        <td>15:40 - 16:10</td>
+                        <td>Computação Científica</td>
+                        <td>Igor Fagner</td>
+                    </tr>
+                    <tr>
+                        <td>16:20 - 17:00</td>
+                        <td>Python on Raspberry Pi</td>
+                        <td>Daker Fernandes Pinheiro</td>
+                    </tr>
+                    <tr>
+                        <td>17:00 - 17:30</td>
+                        <td>Lighting Talks Round 2</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="row show-grid underhero">
+            <div class="span3">
+                <h2 style="margin-top:10px;">Parceiros</h2>
+            </div>
+            <div class="span3">
+                <a target="_blank" href="http://www.poli.br/">
+                    <img src="{{ STATIC_URL }}imagens/poli.png" alt="POLI-UPE" width="150" />
+                </a>
+            </div>
+            <div class="span3">
+                <a target="_blank" href="http://www.hostech.com.br/">
+                    <img src="{{ STATIC_URL }}imagens/hostech.png" alt="Hostech" width="150" />
+                </a>
+            </div>
+            <div class="span3">
+                <a target="_blank" href="http://amadeus.cin.ufpe.br/">
+                    <img style="margin-top:10px;" src="{{ STATIC_URL }}imagens/amadeus.jpg" alt="Amadeus" width="150" />
+                </a>
+            </div>
+            <div class="span3">
+                <a target="_blank" href="http://www.ecomp.poli.br/">
+                    <img style="margin-top:10px;" src="{{ STATIC_URL }}imagens/engComp.bmp" alt="热酷" width="150" />
+                </a>
+            </div>
+
+        </div><!--END grid-->
+        <div class="row show-grid underhero">
+            <div class="span3">&nbsp;</div>
+
+            <div class="span3">
+                <a target="_blank" href="https://www.facebook.com/celulasempreendedoras">
+                    <img style="margin-top:10px;" src="{{ STATIC_URL }}imagens/celulas.jpg" alt="Células Empreendedoras" width="150" />
+                </a>
+            </div>
+
+            <div class="span3">
+                <a target="_blank" href="http://pycursos.com">
+                    <img style="margin-top:20px;" src="{{ STATIC_URL }}imagens/pycursos.png" alt="Douban" width="200" />
+                </a>
+            </div>
+
+            <div class="span3">
+                <a target="_blank" href="mailto:contato@labcodes.com.br">
+                    <img src="{{ STATIC_URL }}imagens/labcodes.png" alt="" width="180" />
+                </a>
+            </div>
+
+            <div class="span3">
+                <a target="_blank" href="http://orygens.com.br">
+                    <img src="{{ STATIC_URL }}imagens/orygens.png" alt="" width="200" />
+                </a>
+            </div>
+        </div>
+    </body>
+</html>
