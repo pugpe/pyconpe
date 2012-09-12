@@ -6,7 +6,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
    url(r'^$',
        'django.views.generic.simple.redirect_to',
-       {'url': '/submissao/', 'permanent': False},
+       {'url': 'http://pug-pe.python.org.br/encontro/xx/', 'permanent': False},
     ),
     url(r'^submissao/', include('submission.urls', namespace='submission')),
     url(r'^emails/', include('emails.urls', namespace='emails')),
